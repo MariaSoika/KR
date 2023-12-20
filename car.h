@@ -1,12 +1,11 @@
-#ifndef CAR_H
-#define CAR_H
+#ifndef CAR1H_H
+#define CAR1H_H
 
 #include <QString>
-#include <cstring>
-#include <iostream>
+
 using namespace std;
-class Car
-{
+
+class Car {
 protected:
     QString brand;
     QString model;
@@ -16,28 +15,35 @@ protected:
     int registrationDate;
 public:
 
-    QString getBrand()const;
+    QString getBrand() const;
+
     void setBrand(QString brand1);
 
-    QString getModel()const;
+    QString getModel() const;
+
     void setModel(QString model1);
 
-    int getYear()const;
+    int getYear() const;
+
     void setYear(int year1);
 
-    QString getColor()const;
+    QString getColor() const;
+
     void setColor(QString color1);
 
-    int getPrice()const;
+    int getPrice() const;
+
     void setPrice(int price1);
 
-    int getRegistrationDate()const;
+    int getRegistrationDate() const;
+
     void setRegistrationDate(int registrationDate1);
 
     Car();
+
     Car(QString brand, QString model, int year, QString color, int price, int registrationDate);
 
     ~Car();
 };
 
-#endif // CAR_H
+#endif // CAR1H_H

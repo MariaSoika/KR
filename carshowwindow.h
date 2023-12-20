@@ -8,20 +8,22 @@
 #include <QSqlTableModel>
 
 namespace Ui {
-class CarShowWindow;
+    class CarShowWindow;
 }
 
-class CarShowWindow : public QDialog
-{
+class CarShowWindow : public QDialog {
     Q_OBJECT
 
 public:
-    explicit CarShowWindow(QWidget *parent = nullptr);
+    explicit CarShowWindow(QWidget* parent = nullptr);
+
     ~CarShowWindow();
-public slots:
-    void on_createCars();
+
+public
+    slots:
+            void on_createCars();
 private:
-    Ui::CarShowWindow *ui;
+    Ui::CarShowWindow* ui;
     QSqlTableModel* model;
     QSqlDatabase db;
 };

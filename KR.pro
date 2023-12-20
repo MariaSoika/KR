@@ -9,13 +9,12 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Car.cpp \
-    MySqlDBManager.cpp \
     addcarwindow.cpp \
     adminauthorizationwindow.cpp \
     adminmainwindow.cpp \
     adminreportswindow.cpp \
     authorizationwindow.cpp \
+    car.cpp \
     carinfoform.cpp \
     carshowwindow.cpp \
     contactswindow.cpp \
@@ -24,23 +23,25 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     searchwindow.cpp \
+    sqlitedbmanager.cpp \
     usermenuwindow.cpp
 
 HEADERS += \
-    Car.h \
-    MySqlDBManager.h \
     addcarwindow.h \
     adminauthorizationwindow.h \
     adminmainwindow.h \
     adminreportswindow.h \
     authorizationwindow.h \
+    car.h \
     carinfoform.h \
     carshowwindow.h \
     contactswindow.h \
+    dbmanager.h \
     detailsteslaywindow.h \
     dialogtest.h \
     mainwindow.h \
     searchwindow.h \
+    sqlitedbmanager.h \
     usermenuwindow.h
 
 FORMS += \
@@ -62,3 +63,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

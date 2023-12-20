@@ -2,10 +2,9 @@
 #include "ui_dialogtest.h"
 #include "carinfoform.h"
 
-DialogTest::DialogTest(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::DialogTest)
-{
+DialogTest::DialogTest(QWidget* parent) :
+        QDialog(parent),
+        ui(new Ui::DialogTest) {
     ui->setupUi(this);
     CarInfoForm* carInfo = new CarInfoForm();
     ui->verticalLayout_2->addWidget(carInfo);
@@ -14,11 +13,10 @@ DialogTest::DialogTest(QWidget *parent) :
     //ui->verticalLayout_2->addWidget(carInfo2);
 
     //CarInfoForm* carInfo3 = new CarInfoForm();
-   // ui->verticalLayout_2->addWidget(carInfo3);
+    // ui->verticalLayout_2->addWidget(carInfo3);
 
 }
 
-DialogTest::~DialogTest()
-{
+DialogTest::~DialogTest() {
     delete ui;
 }

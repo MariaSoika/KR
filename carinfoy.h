@@ -4,19 +4,19 @@
 #include <QWidget>
 
 namespace Ui {
-class CarInfoY;
+    class CarInfoY;
 }
 
-class CarInfoY : public QWidget
-{
+class CarInfoY : public QWidget {
     Q_OBJECT
 
 public:
-    explicit CarInfoY(QWidget *parent = nullptr);
+    explicit CarInfoY(QWidget* parent = nullptr);
+
     ~CarInfoY();
 
 private:
-    Ui::CarInfoY *ui;
+    Ui::CarInfoY* ui;
 };
 
 #endif // CARINFOY_H
