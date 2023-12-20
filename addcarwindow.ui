@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddCarWindow</class>
+ <widget class="QDialog" name="AddCarWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>217</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add car</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QLineEdit" name="lineEditYear">
+     <property name="placeholderText">
+      <string>Year</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLineEdit" name="lineEditRegDate">
+     <property name="placeholderText">
+      <string>Registration Date</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="lineEditModel">
+     <property name="placeholderText">
+      <string>Model</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLineEdit" name="lineEditColor">
+     <property name="placeholderText">
+      <string>Color</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLineEdit" name="lineEditBrand">
+     <property name="placeholderText">
+      <string>Brand</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLineEdit" name="lineEditPrice">
+     <property name="placeholderText">
+      <string>Price</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QPushButton" name="pushButtonCreate">
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+background-color: rgb(245, 245, 245);
+border:none;
+color: rgb(2, 2, 2);
+border-left: 1px solid rgb(245, 245, 245);
+border-right: 1px solid rgb(245, 245, 245);
+border-bottom: 5px solid rgb(245, 245, 245);
+}
+QPushButton:hover {
+    color: #000000;
+    background-color: rgb(200, 200, 200); 
+    border: 0px solid rgb(0, 0, 0);
+}</string>
+     </property>
+     <property name="text">
+      <string>Create</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEditBrand</tabstop>
+  <tabstop>lineEditModel</tabstop>
+  <tabstop>lineEditYear</tabstop>
+  <tabstop>lineEditColor</tabstop>
+  <tabstop>lineEditPrice</tabstop>
+  <tabstop>lineEditRegDate</tabstop>
+  <tabstop>pushButtonCreate</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
