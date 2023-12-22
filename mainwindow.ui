@@ -116,7 +116,10 @@ border:none;
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>C:/Users/ACER/Pictures/Screenshots/Снимок экрана 2023-12-06 195412.png</pixmap>
+            <pixmap resource="resources.qrc">:/pictures/C:/Users/Ruslan/Desktop/Start studying.jpg</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButtonLogIn">
@@ -497,6 +500,8 @@ QPushButton:hover {
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

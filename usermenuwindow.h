@@ -6,15 +6,15 @@
 #include "allcarwindow.h"
 
 namespace Ui {
-class UserMenuWindow;
+    class UserMenuWindow;
 }
 
-class UserMenuWindow : public QDialog
-{
+class UserMenuWindow : public QDialog {
     Q_OBJECT
 
 public:
-    explicit UserMenuWindow(QWidget *parent = nullptr);
+    explicit UserMenuWindow(QWidget* parent = nullptr);
+
     ~UserMenuWindow();
 
 private slots:
@@ -23,7 +23,7 @@ private slots:
     void on_pushButton_clicked();
 
 private:
-    Ui::UserMenuWindow *ui;
+    Ui::UserMenuWindow* ui;
     ContactsWindow* contactsWindow;
     AllCarWindow allCarWindow;
 };

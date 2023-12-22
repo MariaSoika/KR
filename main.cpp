@@ -1,14 +1,15 @@
 #include "mainwindow.h"
-#include "dialogtest.h"
+#include "sqlitedbmanager.h"
 
 #include <QApplication>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
-    MainWindow w;
+    DBManager* dbManager = new SqliteDBManager();
+
+    MainWindow w(dbManager);
     w.show();
-   // DialogTest test;
+    // DialogTest test;
     //test.show();
     return a.exec();
 }

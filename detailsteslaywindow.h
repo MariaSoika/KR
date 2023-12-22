@@ -4,19 +4,19 @@
 #include <QDialog>
 
 namespace Ui {
-class DetailsTeslaYWindow;
+    class DetailsTeslaYWindow;
 }
 
-class DetailsTeslaYWindow : public QDialog
-{
+class DetailsTeslaYWindow : public QDialog {
     Q_OBJECT
 
 public:
-    explicit DetailsTeslaYWindow(QWidget *parent = nullptr);
+    explicit DetailsTeslaYWindow(QWidget* parent = nullptr);
+
     ~DetailsTeslaYWindow();
 
 private:
-    Ui::DetailsTeslaYWindow *ui;
+    Ui::DetailsTeslaYWindow* ui;
 };
 
 #endif // DETAILSTESLAYWINDOW_H

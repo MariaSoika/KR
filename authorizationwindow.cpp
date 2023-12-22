@@ -1,41 +1,32 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include "authorizationwindow.h"
 #include "ui_authorizationwindow.h"
 #include <QMessageBox>
 
-AuthorizationWindow::AuthorizationWindow(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::AuthorizationWindow)
-{
+AuthorizationWindow::AuthorizationWindow(DBManager* dbManager, QWidget* parent) :
+        QDialog(parent), ui(new Ui::AuthorizationWindow),
+        dbManager(dbManager) {
     ui->setupUi(this);
-    adminAuthorizationWindow = new AdminAuthorizationWindow(this);
+    adminAuthorizationWindow = new AdminAuthorizationWindow(this->dbManager, this);
     adminAuthorizationWindow->setModal(true);
 }
 
-AuthorizationWindow::~AuthorizationWindow()
-{
+AuthorizationWindow::~AuthorizationWindow() {
     delete ui;
 }
 
 
-void AuthorizationWindow::on_pushButtonAdmLogIn_clicked()
-{
+void AuthorizationWindow::on_pushButtonAdmLogIn_clicked() {
     adminAuthorizationWindow->show();
     this->hide();
 }
 
 
-void AuthorizationWindow::on_pushButtonUserLogIn_clicked()
-{
+void AuthorizationWindow::on_pushButtonUserLogIn_clicked() {
     QString firstName = ui->lineEditUserFirsName->text();
     QString lastName = ui->lineEditUserLastName->text();
-    if (firstName.isEmpty() || lastName.isEmpty())
-    {
+    if (firstName.isEmpty() || lastName.isEmpty()) {
         QMessageBox::warning(this, QString("Warning"), QString("Both first name and last name are required"));
-    }
-    else
-    {
+    } else {
         QMessageBox::information(this, QString("Access Grante"), QString("Access allowed"));
         this->close();
     }

@@ -3,10 +3,9 @@
 #include "QMessageBox"
 #include "QSqlQuery"
 
-CarInfoForm::CarInfoForm(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::CarInfoForm)
-{
+CarInfoForm::CarInfoForm(QWidget* parent) :
+        QWidget(parent),
+        ui(new Ui::CarInfoForm) {
     ui->setupUi(this);
     QSqlQuery query;
     query.prepare("SELECT * FROM Cars WHERE model = :carModel");
@@ -34,7 +33,6 @@ CarInfoForm::CarInfoForm(QWidget *parent) :
     }
 }
 
-CarInfoForm::~CarInfoForm()
-{
+CarInfoForm::~CarInfoForm() {
     delete ui;
 }
