@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FindCarWindow</class>
+ <widget class="QDialog" name="FindCarWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>363</width>
+    <height>213</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLineEdit" name="lineEditCarNameToSearch">
+     <property name="placeholderText">
+      <string>Enter model for search</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="labelCarInfo">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+background-color: rgb(245, 245, 245);
+border:none;
+color: rgb(2, 2, 2);
+border-left: 1px solid rgb(245, 245, 245);
+border-right: 1px solid rgb(245, 245, 245);
+border-bottom: 5px solid rgb(245, 245, 245);
+}
+QPushButton:hover {
+    color: #000000;
+    background-color: rgb(200, 200, 200); 
+    border: 0px solid rgb(0, 0, 0);
+}</string>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

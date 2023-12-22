@@ -13,7 +13,7 @@ class AddCarWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit AddCarWindow(QWidget *parent = nullptr);
+    explicit AddCarWindow(MySqlDBManager *dbManager,QWidget *parent = nullptr);
     ~AddCarWindow();
 
 private slots:

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "contactswindow.h"
+#include "allcarwindow.h"
 
 namespace Ui {
 class UserMenuWindow;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_pushButton_4_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::UserMenuWindow *ui;
     ContactsWindow* contactsWindow;
+    AllCarWindow allCarWindow;
 };
 
 #endif // USERMENUWINDOW_H

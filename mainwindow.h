@@ -9,6 +9,7 @@
 #include "carinfoform.h"
 #include "dialogtest.h"
 #include "carinfoy.h"
+#include "findcarwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,5 +39,6 @@ private:
     UserMenuWindow* userMenuWindow;
     SearchWindow* searchWindow;
     DialogTest test;
+    FindCarWindow *findCarWindow;
 };
 #endif // MAINWINDOW_H

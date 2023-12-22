@@ -10,17 +10,22 @@ CONFIG += c++17
 
 SOURCES += \
     Car.cpp \
+    Customer.cpp \
     MySqlDBManager.cpp \
+    Report.cpp \
     addcarwindow.cpp \
     adminauthorizationwindow.cpp \
     adminmainwindow.cpp \
     adminreportswindow.cpp \
+    allcarwindow.cpp \
     authorizationwindow.cpp \
     carinfoform.cpp \
     carshowwindow.cpp \
     contactswindow.cpp \
+    deletecarwindow.cpp \
     detailsteslaywindow.cpp \
     dialogtest.cpp \
+    findcarwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     searchwindow.cpp \
@@ -28,17 +33,22 @@ SOURCES += \
 
 HEADERS += \
     Car.h \
+    Customer.h \
     MySqlDBManager.h \
+    Report.h \
     addcarwindow.h \
     adminauthorizationwindow.h \
     adminmainwindow.h \
     adminreportswindow.h \
+    allcarwindow.h \
     authorizationwindow.h \
     carinfoform.h \
     carshowwindow.h \
     contactswindow.h \
+    deletecarwindow.h \
     detailsteslaywindow.h \
     dialogtest.h \
+    findcarwindow.h \
     mainwindow.h \
     searchwindow.h \
     usermenuwindow.h
@@ -48,12 +58,15 @@ FORMS += \
     adminauthorizationwindow.ui \
     adminmainwindow.ui \
     adminreportswindow.ui \
+    allcarwindow.ui \
     authorizationwindow.ui \
     carinfoform.ui \
     carshowwindow.ui \
     contactswindow.ui \
+    deletecarwindow.ui \
     detailsteslaywindow.ui \
     dialogtest.ui \
+    findcarwindow.ui \
     mainwindow.ui \
     searchwindow.ui \
     usermenuwindow.ui

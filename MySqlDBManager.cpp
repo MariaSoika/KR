@@ -35,7 +35,7 @@ void MySqlDBManager::connectToDataBase()
     }
 }
 
-void MySqlDBManager::closeDataBase()
+void MySqlDBManager::closeDataBaseCars()
 {
     db.close();
 }
@@ -59,7 +59,7 @@ bool MySqlDBManager::createTableCars()
                      PRIMARY KEY('id' AUTOINCREMENT)\
                      );"))
         {
-            qDebug("Database: error of creating table Product");
+            qDebug("Database: error of creating table Cars");
             qDebug() << query->lastError().text();
             return false;
         }
@@ -69,7 +69,7 @@ bool MySqlDBManager::createTableCars()
         }
 }
 
-bool MySqlDBManager::inserIntoTable(const Car &car)
+bool MySqlDBManager::inserIntoTableCars(const Car &car)
 {
         QSqlQuery query(db);
         query.prepare("INSERT INTO Cars(brand,model,year,color,price,registstration_Date) "

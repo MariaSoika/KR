@@ -6,6 +6,8 @@
 #include "MySqlDBManager.h"
 #include "carshowwindow.h"
 #include "addcarwindow.h"
+#include "deletecarwindow.h"
+#include "findcarwindow.h"
 
 namespace Ui {
 class AdminMainWindow;
@@ -26,12 +28,18 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButtonDelete_clicked();
+
+    void on_pushButtonFind_clicked();
+
 private:
     Ui::AdminMainWindow *ui;
     AdminReportsWindow *adminReportsWindow;
     MySqlDBManager *dbManager;
     CarShowWindow *carShowWindow;
     AddCarWindow *addCarWindow;
+    DeleteCarWindow *deleteCarWindow;
+    FindCarWindow *findCarWindow;
 };
 
 #endif // ADMINMAINWINDOW_H

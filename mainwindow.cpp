@@ -17,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     searchWindow= new SearchWindow(this);
     searchWindow->setModal(true);
 
+    findCarWindow = new FindCarWindow(this);
+    findCarWindow->setModal(true);
+
     //detailsTeslaYWindow=new DetailsTeslaYWindow(this);
     //detailsTeslaYWindow->setModal(true);
 
@@ -56,6 +59,7 @@ void MainWindow::on_pushButtonUsreMenu_clicked()
 
 void MainWindow::on_pushButtonSearch_clicked()
 {
-    searchWindow->show();
+    //searchWindow->show();
+    findCarWindow->show();
 }
 

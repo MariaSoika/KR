@@ -79,3 +79,8 @@ Car::Car(QString brand, QString model, int year, QString color, int price, int r
     this->registrationDate=registrationDate;
 
 }
+
+Car::~Car()
+{
+
+}

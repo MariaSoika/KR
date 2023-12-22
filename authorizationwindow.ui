@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLineEdit" name="lineEditUserFirsName">
      <property name="text">
-      <string>User name</string>
+      <string/>
      </property>
      <property name="placeholderText">
       <string>First Name</string>

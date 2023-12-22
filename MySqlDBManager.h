@@ -5,16 +5,19 @@
 #include <QSqlError>
 #include <QSqlTableModel>
 #include "Car.h"
+#include "Report.h"
 
 class MySqlDBManager
 {
 public:
     void connectToDataBase();
-    void closeDataBase();
+    void closeDataBaseCars();
     QSqlDatabase getDB();
     bool createTableCars();
-    bool inserIntoTable(const Car& car);
-   // bool inserIntoTable(const Medicine& medicine);
+    bool inserIntoTableCars(const Car& car);
+
+
+
 private:
     QSqlDatabase db;
     QSqlQuery* query;

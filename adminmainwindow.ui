@@ -38,7 +38,7 @@ QPushButton:hover {
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="pushButtonFind">
      <property name="styleSheet">
       <string notr="true">QPushButton
 {
@@ -84,7 +84,7 @@ QPushButton:hover {
     </widget>
    </item>
    <item row="3" column="0">
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="pushButtonDelete">
      <property name="styleSheet">
       <string notr="true">QPushButton
 {

@@ -17,9 +17,17 @@ AdminMainWindow::AdminMainWindow(QWidget *parent) :
     this->dbManager = new MySqlDBManager();
     this->dbManager->connectToDataBase();
 
-    addCarWindow=new AddCarWindow(this);
+    //this->dbManager->createTableCars();
+
+    addCarWindow=new AddCarWindow(this->dbManager,this);
     addCarWindow->setModal(true);
     connect(addCarWindow, &AddCarWindow::createCars, carShowWindow, &CarShowWindow::on_createCars);
+
+    deleteCarWindow = new DeleteCarWindow(this);
+    deleteCarWindow->setModal(true);
+
+    findCarWindow = new FindCarWindow(this);
+    findCarWindow->setModal(true);
 }
 
 AdminMainWindow::~AdminMainWindow()
@@ -42,5 +50,17 @@ void AdminMainWindow::on_pushButton_2_clicked()
 void AdminMainWindow::on_pushButton_clicked()
 {
     addCarWindow->show();
+}
+
+
+void AdminMainWindow::on_pushButtonDelete_clicked()
+{
+    deleteCarWindow->show();
+}
+
+
+void AdminMainWindow::on_pushButtonFind_clicked()
+{
+    findCarWindow->show();
 }
 

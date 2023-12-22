@@ -3,8 +3,8 @@
 #include "Car.h"
 #include <QMessageBox>
 
-AddCarWindow::AddCarWindow(QWidget *parent) :
-    QDialog(parent),
+AddCarWindow::AddCarWindow(MySqlDBManager* dbManager,QWidget *parent) :
+    QDialog(parent), dbManager(dbManager),
     ui(new Ui::AddCarWindow)
 {
     ui->setupUi(this);
@@ -34,7 +34,9 @@ void AddCarWindow::on_pushButtonCreate_clicked()
     else
     {
          car = new Car(brand, model, year.toInt(), color, price.toInt(), regDate.toInt());
-         this->dbManager->inserIntoTable(*car);
+         this->dbManager->inserIntoTableCars(*car);
+         QMessageBox::information(this, QString("Add"), QString("Car add secssefully"));
+         this->close();
     }
 
 }
