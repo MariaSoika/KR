@@ -2,14 +2,15 @@
 #include "ui_carshowwindow.h"
 #include <QMessageBox>
 
-CarShowWindow::CarShowWindow(QWidget* parent) :
-        QDialog(parent),
-        ui(new Ui::CarShowWindow) {
+CarShowWindow::CarShowWindow(DBManager *dbManager, QWidget* parent) :
+    QDialog(parent),
+    ui(new Ui::CarShowWindow) {
     ui->setupUi(this);
-    model = new QSqlTableModel(this, db);
+    model = new QSqlTableModel(this, dbManager->getDB());
     model->setTable("Cars");
     model->select();
     ui->tableView->setModel(model);
+    ui->tableView->horizontalHeader()->setStretchLastSection(true);
 }
 
 CarShowWindow::~CarShowWindow() {
@@ -17,9 +18,5 @@ CarShowWindow::~CarShowWindow() {
 }
 
 void CarShowWindow::on_createCars() {
-    model = new QSqlTableModel(this, db);
-    model->setTable("Cars");
     model->select();
-    ui->tableView->setModel(model);
-    qDebug() << model->lastError().text();
 }

@@ -39,7 +39,7 @@ private:
     DetailsTeslaYWindow* detailsTeslaYWindow;
     UserMenuWindow* userMenuWindow;
     SearchWindow* searchWindow;
-    DialogTest test;
+    DialogTest* test;
     FindCarWindow *findCarWindow;
 };
 #endif // MAINWINDOW_H

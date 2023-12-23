@@ -1,6 +1,6 @@
 #include "deletecarwindow.h"
 #include "ui_deletecarwindow.h"
-#include "MySqlDBManager.h"
+#include "sqlitedbmanager.h"
 #include <QMessageBox>
 
 DeleteCarWindow::DeleteCarWindow(QWidget *parent) :
@@ -23,19 +23,19 @@ void DeleteCarWindow::on_pushButton_clicked()
     if(carModelToDelete.isEmpty())
     {
         QMessageBox::warning(this, QString("Warning"), QString("Field cannot be empty"));
+        return;
     }
 
     QSqlQuery query;
-    query.prepare("Delete from Cars where model = '"+carModelToDelete+"'");
+    query.prepare("Delete from Cars where model = '"+carModelToDelete+"'");  //TODO
 
     if (query.exec())
     {
         QMessageBox::information(this, QString ("Delete"), QString ("Data secssecfully deleted"));
-        this->close();
+        this->accept();
     }
     else
         QMessageBox::warning(this, QString("Warning"), QString("Error of deleting data from table Cars"));
-
 }
 
 

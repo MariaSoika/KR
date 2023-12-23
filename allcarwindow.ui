@@ -6,32 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>398</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QScrollArea" name="scrollArea">
-     <property name="styleSheet">
-      <string notr="true">QScrollBar:vertical
-{
-border: none;
-background-color: rgb(240, 240, 240);
-}
-
-QScrollBar:horizontal
-{
-border: none;
-background-color: rgb(240, 240, 240);
-}</string>
-     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -40,8 +24,8 @@ background-color: rgb(240, 240, 240);
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>526</width>
-        <height>1418</height>
+        <width>366</width>
+        <height>1218</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -50,7 +34,7 @@ background-color: rgb(240, 240, 240);
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>1400</height>
+           <height>1200</height>
           </size>
          </property>
          <property name="frameShape">
@@ -60,8 +44,30 @@ background-color: rgb(240, 240, 240);
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
-          <item row="0" column="0">
-           <layout class="QVBoxLayout" name="verticalLayout"/>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QLabel" name="labelCarInfo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="labelCarImage">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>Dispaly all cars</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>

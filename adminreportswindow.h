@@ -2,6 +2,7 @@
 #define ADMINREPORTSWINDOW_H
 
 #include <QDialog>
+#include "dbmanager.h"
 
 namespace Ui {
     class AdminReportsWindow;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::AdminReportsWindow* ui;
+    DBManager *dbManager;
 };
 
 #endif // ADMINREPORTSWINDOW_H

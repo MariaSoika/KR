@@ -8,6 +8,9 @@ UserMenuWindow::UserMenuWindow(QWidget* parent) :
     contactsWindow = new ContactsWindow(this);
     contactsWindow->setModal(true);
 
+    allCarWindow=new AllCarWindow(this);
+    allCarWindow->setModal(true);
+
 }
 
 UserMenuWindow::~UserMenuWindow() {
@@ -21,6 +24,6 @@ void UserMenuWindow::on_pushButton_4_clicked() {
 
 void UserMenuWindow::on_pushButton_clicked()
 {
-    allCarWindow.show();
+    allCarWindow->show();
 }
 

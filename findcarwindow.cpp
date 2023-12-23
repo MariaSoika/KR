@@ -1,6 +1,8 @@
 #include "findcarwindow.h"
 #include "ui_findcarwindow.h"
 #include <QMessageBox>
+#include <QSqlQuery>
+#include <QSqlError>
 
 FindCarWindow::FindCarWindow(QWidget *parent) :
     QDialog(parent),
@@ -14,6 +16,8 @@ FindCarWindow::~FindCarWindow()
     delete ui;
 }
 
+
+
 void FindCarWindow::on_pushButton_clicked()
 {
     QString carModelToSearch = ui->lineEditCarNameToSearch->text();
@@ -25,14 +29,16 @@ void FindCarWindow::on_pushButton_clicked()
     else
     {
         QSqlQuery query;
-        query.prepare("SELECT * FROM Cars WHERE model = :carModel");
+        query.prepare("SELECT * FROM Cars WHERE model = :carModel"); //TODO
         query.bindValue(":carModel", carModelToSearch);
 
         if (query.exec())
         {
             if (query.next())
             {
+
                 // Отримати дані про знайдений автомобіль та вивести їх
+                QString foundCarImage = query.value("image").toString();
                 QString foundCarBrand = query.value("brand").toString();
                 QString foundCarModel = query.value("model").toString();
                 int foundCarYear = query.value("year").toInt();
@@ -40,6 +46,8 @@ void FindCarWindow::on_pushButton_clicked()
                 int foundCarPrice = query.value("price").toInt();
                 int foundCarRegistrarionDate = query.value("registstration_Date").toInt();
 
+                QPixmap carImage(foundCarImage);
+                ui->labelCarImage->setPixmap(carImage.scaled(ui->labelCarImage->size(), Qt::KeepAspectRatio));
 
                 ui->labelCarInfo->setText("---Car info---"
                 "\nBrand: " + foundCarBrand +
@@ -50,6 +58,7 @@ void FindCarWindow::on_pushButton_clicked()
                 "\nRegistration date: " + QString::number(foundCarRegistrarionDate)
                  );
             }
+
             else
             {
                 QMessageBox::information(this, QString("Search"), QString("Car not found"));
@@ -61,6 +70,5 @@ void FindCarWindow::on_pushButton_clicked()
             qDebug() << "Error: " << query.lastError();
         }
     }
-
 }
 

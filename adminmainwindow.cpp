@@ -9,19 +9,19 @@ AdminMainWindow::AdminMainWindow(DBManager* dbManager, QWidget* parent) :
     adminReportsWindow = new AdminReportsWindow(this);
     adminReportsWindow->setModal(true);
 
-    carShowWindow = new CarShowWindow(this);
+    carShowWindow = new CarShowWindow(dbManager, this);
     carShowWindow->setModal(true);
-
-    this->dbManager->connectToDataBase();
 
     //this->dbManager->createTableCars();
 
     addCarWindow=new AddCarWindow(this->dbManager,this);
     addCarWindow->setModal(true);
+    connect(addCarWindow, &AddCarWindow::accepted, carShowWindow, &CarShowWindow::on_createCars);
     connect(addCarWindow, &AddCarWindow::createCars, carShowWindow, &CarShowWindow::on_createCars);
 
     deleteCarWindow = new DeleteCarWindow(this);
     deleteCarWindow->setModal(true);
+    connect(deleteCarWindow, &DeleteCarWindow::accepted, carShowWindow, &CarShowWindow::on_createCars);
 
     findCarWindow = new FindCarWindow(this);
     findCarWindow->setModal(true);

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>217</width>
-    <height>300</height>
+    <width>408</width>
+    <height>314</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,53 +16,117 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="0">
-    <widget class="QLineEdit" name="lineEditYear">
-     <property name="placeholderText">
-      <string>Year</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLineEdit" name="lineEditRegDate">
-     <property name="placeholderText">
-      <string>Registration Date</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLineEdit" name="lineEditModel">
-     <property name="placeholderText">
-      <string>Model</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLineEdit" name="lineEditColor">
-     <property name="placeholderText">
-      <string>Color</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLineEdit" name="lineEditBrand">
-     <property name="placeholderText">
-      <string>Brand</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLineEdit" name="lineEditPrice">
-     <property name="placeholderText">
-      <string>Price</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QPushButton" name="pushButtonCreate">
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+  <widget class="QLineEdit" name="lineEditYear">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>87</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Year</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditRegDate">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>195</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Registration Date</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditModel">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>51</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Model</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditColor">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>123</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Color</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditBrand">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>15</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Brand</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditPrice">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>159</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Price</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logoHandler">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>20</y>
+     <width>231</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>229</y>
+     <width>331</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButtonCreate">
+      <property name="styleSheet">
+       <string notr="true">QPushButton
 {
 background-color: rgb(245, 245, 245);
 border:none;
@@ -76,13 +140,37 @@ QPushButton:hover {
     background-color: rgb(200, 200, 200); 
     border: 0px solid rgb(0, 0, 0);
 }</string>
-     </property>
-     <property name="text">
-      <string>Create</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+      </property>
+      <property name="text">
+       <string>Create</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+background-color: rgb(245, 245, 245);
+border:none;
+color: rgb(2, 2, 2);
+border-left: 1px solid rgb(245, 245, 245);
+border-right: 1px solid rgb(245, 245, 245);
+border-bottom: 5px solid rgb(245, 245, 245);
+}
+QPushButton:hover {
+    color: #000000;
+    background-color: rgb(200, 200, 200); 
+    border: 0px solid rgb(0, 0, 0);
+}</string>
+      </property>
+      <property name="text">
+       <string>Add photo</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>lineEditBrand</tabstop>

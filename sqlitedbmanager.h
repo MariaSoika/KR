@@ -8,7 +8,7 @@
 
 #include "dbmanager.h"
 
-#define DATABASE_FILE_NAME   "./Database.db"
+#define DATABASE_FILE_NAME   "Database.db"
 
 class SqliteDBManager : public DBManager {
 public:
@@ -21,6 +21,8 @@ public:
     QSqlDatabase getDB() override;
 
     bool insertIntoTable(const Car& car) override;
+
+    void displayAllCars(QLabel* labelinfo, QLabel* lableImage) override;
 
 private:
     bool openDataBase();

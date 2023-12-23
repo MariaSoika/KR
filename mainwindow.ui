@@ -46,7 +46,7 @@ background-color: rgb(240, 240, 240);
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-707</y>
          <width>636</width>
          <height>1218</height>
         </rect>
@@ -102,8 +102,8 @@ border:none;
             <rect>
              <x>10</x>
              <y>70</y>
-             <width>551</width>
-             <height>271</height>
+             <width>591</width>
+             <height>291</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -116,7 +116,7 @@ border:none;
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resources.qrc">:/pictures/C:/Users/Ruslan/Desktop/Start studying.jpg</pixmap>
+            <pixmap resource="resources.qrc">:/pictures/pictures/Снимок экрана 2023-12-06 195412.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -223,7 +223,7 @@ QPushButton:hover {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>C:/Users/ACER/Downloads/2016_tesla_s.jpeg</pixmap>
+            <pixmap resource="resources.qrc">:/pictures/pictures/2016_tesla_s.jpeg</pixmap>
            </property>
           </widget>
           <widget class="QLabel" name="label_5">
@@ -351,7 +351,7 @@ QPushButton:hover {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>C:/Users/ACER/Downloads/teslax.jpg</pixmap>
+            <pixmap resource="resources.qrc">:/pictures/pictures/teslax.jpg</pixmap>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButtonUsreMenu">

@@ -10,7 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     Customer.cpp \
-    MySqlDBManager.cpp \
     Report.cpp \
     addcarwindow.cpp \
     adminauthorizationwindow.cpp \
@@ -33,7 +32,6 @@ SOURCES += \
     usermenuwindow.cpp
 
 HEADERS += \
-    MySqlDBManager.h \
     Report.h \
     addcarwindow.h \
     adminauthorizationwindow.h \

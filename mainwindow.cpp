@@ -18,6 +18,8 @@ MainWindow::MainWindow(DBManager* dbManager, QWidget* parent)
     findCarWindow = new FindCarWindow(this);
     findCarWindow->setModal(true);
 
+    test = new DialogTest(this);
+
     //detailsTeslaYWindow=new DetailsTeslaYWindow(this);
     //detailsTeslaYWindow->setModal(true);
 
@@ -42,7 +44,7 @@ void MainWindow::on_pushButtonLogIn_clicked() {
 
 
 void MainWindow::on_pushButtonTeslaYDetails_clicked() {
-    test.show();
+    test->show();
 }
 
 

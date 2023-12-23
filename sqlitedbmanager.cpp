@@ -65,7 +65,7 @@ QSqlDatabase SqliteDBManager::getDB() {
 
 bool SqliteDBManager::createTables() {
     QSqlQuery query(db);
-    if (!query.exec("CREATE TABLE 'cars' (\
+    if (!query.exec("CREATE TABLE 'Cars' (\
                      'id' INTEGER,\
                      'brand' VARCHAR(255),\
                      'model'	VARCHAR(255),\
@@ -73,6 +73,7 @@ bool SqliteDBManager::createTables() {
                      'color'	VARCHAR(255),\
                      'price'	INTEGER,\
                      'registstration_date'	INTEGER,\
+                     'image' VARCHAR(255),\
                      PRIMARY KEY('id' AUTOINCREMENT)\
                      );")) {
         qDebug("Database: error of creating table 'cars'");
@@ -95,14 +96,15 @@ bool SqliteDBManager::createTables() {
 
 bool SqliteDBManager::insertIntoTable(const Car& car) {
     QSqlQuery query(db);
-    query.prepare("INSERT INTO cars(brand,model,year,color,price,registstration_date) "
-                  "VALUES(:value2,:value3,:value4,:value5,:value6,:value7 )");
+    query.prepare("INSERT INTO Cars(brand,model,year,color,price,registstration_date, image) "
+                  "VALUES(:value2,:value3,:value4,:value5,:value6,:value7,:value8 )");
     query.bindValue(":value2", car.getBrand());
     query.bindValue(":value3", car.getModel());
     query.bindValue(":value4", car.getYear());
     query.bindValue(":value5", car.getColor());
     query.bindValue(":value6", car.getPrice());
     query.bindValue(":value7", car.getRegistrationDate());
+    query.bindValue(":value8", car.getImage());
     if (query.exec()) {
         qDebug("Data insert into table cars");
         return true;
@@ -113,4 +115,32 @@ bool SqliteDBManager::insertIntoTable(const Car& car) {
         return false;
     }
 }
+
+void SqliteDBManager::displayAllCars(QLabel* labelCarInfo, QLabel* labelCarImage)
+{
+    QSqlQuery query(db);
+    if (query.exec("SELECT * FROM Cars"))
+    {
+        QString CarImage = query.value("image").toString();
+        QString CarBrand = query.value("brand").toString();
+        QString CarModel = query.value("model").toString();
+        int CarYear = query.value("year").toInt();
+        QString CarColor = query.value("color").toString();
+        int CarPrice = query.value("price").toInt();
+        int CarRegistrarionDate = query.value("registstration_Date").toInt();
+
+        QPixmap carImage(CarImage);
+        labelCarImage->setPixmap(carImage.scaled(labelCarImage->size(), Qt::KeepAspectRatio));
+
+        labelCarInfo->setText("---Car info---"
+                              "\nBrand: " + CarBrand +
+                              "\nModel: " + CarModel +
+                              "\nYear: " + QString::number(CarYear) +
+                              "\nColor: " + CarColor +
+                              "\nPrice: " + QString::number(CarPrice) +
+                              "\nRegistration date: " + QString::number(CarRegistrarionDate));
+    }
+}
+
+
 

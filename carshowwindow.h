@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QSqlTableModel>
+#include "dbmanager.h"
 
 namespace Ui {
     class CarShowWindow;
@@ -15,7 +16,7 @@ class CarShowWindow : public QDialog {
     Q_OBJECT
 
 public:
-    explicit CarShowWindow(QWidget* parent = nullptr);
+    explicit CarShowWindow(DBManager* dbManager, QWidget* parent = nullptr);
 
     ~CarShowWindow();
 
@@ -25,7 +26,6 @@ public
 private:
     Ui::CarShowWindow* ui;
     QSqlTableModel* model;
-    QSqlDatabase db;
 };
 
 #endif // CARSHOWWINDOW_H

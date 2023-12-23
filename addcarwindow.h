@@ -20,13 +20,16 @@ private
     slots:
             void on_pushButtonCreate_clicked();
 
-    signals:
+    void on_pushButton_clicked();
+
+signals:
             void createCars(Car * );
 
 private:
     Ui::AddCarWindow* ui;
     Car* car;
     DBManager* dbManager;
+    QString logo;
 };
 
 #endif // ADDCARWINDOW_H

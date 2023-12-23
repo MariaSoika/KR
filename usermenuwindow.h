@@ -25,7 +25,7 @@ private slots:
 private:
     Ui::UserMenuWindow* ui;
     ContactsWindow* contactsWindow;
-    AllCarWindow allCarWindow;
+    AllCarWindow* allCarWindow;
 };
 
 #endif // USERMENUWINDOW_H

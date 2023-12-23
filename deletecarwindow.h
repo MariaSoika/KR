@@ -1,6 +1,6 @@
 #ifndef DELETECARWINDOW_H
 #define DELETECARWINDOW_H
-#include "MySqlDBManager.h"
+#include "dbmanager.h"
 
 #include <QDialog>
 
@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::DeleteCarWindow *ui;
-    MySqlDBManager *dbManager;
+    DBManager *dbManager;
 };
 
 #endif // DELETECARWINDOW_H

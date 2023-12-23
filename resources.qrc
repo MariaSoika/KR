@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/pictures">
-        <file>C:/Users/Ruslan/Desktop/Start studying.jpg</file>
+        <file>pictures/20220928155104.png</file>
+        <file>pictures/2016_tesla_s.jpeg</file>
+        <file>pictures/teslax.jpg</file>
+        <file>pictures/Снимок экрана 2023-12-06 195412.png</file>
     </qresource>
 </RCC>

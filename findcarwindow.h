@@ -2,7 +2,7 @@
 #define FINDCARWINDOW_H
 
 #include <QDialog>
-#include "MySqlDBManager.h"
+#include "dbmanager.h"
 
 namespace Ui {
 class FindCarWindow;
@@ -21,7 +21,7 @@ private slots:
 
 private:
     Ui::FindCarWindow *ui;
-    MySqlDBManager *dbManager;
+    DBManager *dbManager;
 };
 
 #endif // FINDCARWINDOW_H
