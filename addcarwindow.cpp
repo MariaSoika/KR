@@ -1,6 +1,7 @@
 #include "addcarwindow.h"
 #include "ui_addcarwindow.h"
 #include "car.h"
+#include "news.h"
 #include <QMessageBox>
 #include <QFileDialog>
 
@@ -23,14 +24,19 @@ void AddCarWindow::on_pushButtonCreate_clicked() {
     QString price = ui->lineEditPrice->text();
     QString regDate = ui->lineEditRegDate->text();
 
+    QString Date = ui->lineEditDate->text();
+    QString _news = "New car added";
+
     if (brand.isEmpty() || model.isEmpty() || year.isEmpty() || color.isEmpty() || price.isEmpty() ||
         regDate.isEmpty() || logo.isEmpty()) {
         QMessageBox::warning(this, QString("Warning"), QString("There is an empty line"));
     }     else
     {
         car = new Car(brand, model, year.toInt(), color, price.toInt(), regDate.toInt(), logo);
+        news = new News (Date, _news);
         qDebug() << "Image Path: " << car->getImage();
         this->dbManager->insertIntoTable(*car);
+        this->dbManager->insetrIntoTableNews(*news);
         QMessageBox::information(this, QString("Add"), QString("Car add secssefully"));
         ui->lineEditBrand->clear();
         ui->lineEditModel->clear();

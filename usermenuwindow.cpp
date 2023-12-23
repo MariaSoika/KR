@@ -11,6 +11,12 @@ UserMenuWindow::UserMenuWindow(QWidget* parent) :
     allCarWindow=new AllCarWindow(this);
     allCarWindow->setModal(true);
 
+    newsShowWindow = new NewsShowWindow(this);
+    newsShowWindow->setModal(true);
+
+    connect(addCarWindow, &AddCarWindow::accepted, newsShowWindow, &newsShowWindow::on_createNews);
+    connect(addCarWindow, &AddCarWindow::createNews, newsShowWindow, &newsShowWindow::on_createNews);
+
 }
 
 UserMenuWindow::~UserMenuWindow() {
@@ -25,5 +31,11 @@ void UserMenuWindow::on_pushButton_4_clicked() {
 void UserMenuWindow::on_pushButton_clicked()
 {
     allCarWindow->show();
+}
+
+
+void UserMenuWindow::on_pushButton_3_clicked()
+{
+    newsShowWindow->show();
 }
 

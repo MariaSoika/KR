@@ -80,11 +80,30 @@ bool SqliteDBManager::createTables() {
         qDebug() << query.lastError().text();
         return false;
     }
-    if (!query.exec("CREATE TABLE users (\
+    if (!query.exec("CREATE TABLE News (\
+                    news   VARCHAR (50),\
+                    date   VARCHAR (50)\
+                    );")) {
+        qDebug("Database: error of creating table news");
+        qDebug() << query.lastError().text();
+        return false;
+    }
+    if (!query.exec("CREATE TABLE Users (\
                     id       INTEGER       PRIMARY KEY AUTOINCREMENT,\
                     login    VARCHAR (50)  UNIQUE,\
                     password VARCHAR (100),\
                     role     VARCHAR (10) \
+                    );")) {
+        qDebug("Database: error of creating table 'users'");
+        qDebug() << query.lastError().text();
+        return false;
+    }
+    if (!query.exec("CREATE TABLE Sales (\
+                    id       INTEGER       PRIMARY KEY AUTOINCREMENT,\
+                    firstName    VARCHAR (50),\
+                    lastName VARCHAR (100),\
+                    carModel     VARCHAR (50), \
+                    price INTEGER ,\
                     );")) {
         qDebug("Database: error of creating table 'users'");
         qDebug() << query.lastError().text();
@@ -139,6 +158,24 @@ void SqliteDBManager::displayAllCars(QLabel* labelCarInfo, QLabel* labelCarImage
                               "\nColor: " + CarColor +
                               "\nPrice: " + QString::number(CarPrice) +
                               "\nRegistration date: " + QString::number(CarRegistrarionDate));
+    }
+}
+
+bool SqliteDBManager::insetrIntoTableNews(const News &news)
+{
+    QSqlQuery query(db);
+    query.prepare("INSERT INTO News(news,date) "
+                  "VALUES(:value1,:value2)");
+    query.bindValue(":value1", news.getNews());
+    query.bindValue(":value3", news.getDate());
+    if (query.exec()) {
+        qDebug("Data insert into table News");
+        return true;
+    } else {
+        qDebug("Database: erorr of inserting table News");
+        qDebug() << query.lastError().text();
+        qDebug() << query.lastQuery();
+        return false;
     }
 }
 

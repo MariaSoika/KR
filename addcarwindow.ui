@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>408</width>
-    <height>314</height>
+    <height>345</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QLineEdit" name="lineEditYear">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>87</y>
+     <x>10</x>
+     <y>100</y>
      <width>121</width>
      <height>24</height>
     </rect>
@@ -32,8 +32,8 @@
   <widget class="QLineEdit" name="lineEditRegDate">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>195</y>
+     <x>10</x>
+     <y>190</y>
      <width>121</width>
      <height>24</height>
     </rect>
@@ -45,8 +45,8 @@
   <widget class="QLineEdit" name="lineEditModel">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>51</y>
+     <x>10</x>
+     <y>70</y>
      <width>121</width>
      <height>24</height>
     </rect>
@@ -58,8 +58,8 @@
   <widget class="QLineEdit" name="lineEditColor">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>123</y>
+     <x>10</x>
+     <y>130</y>
      <width>121</width>
      <height>24</height>
     </rect>
@@ -71,8 +71,8 @@
   <widget class="QLineEdit" name="lineEditBrand">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>15</y>
+     <x>10</x>
+     <y>40</y>
      <width>121</width>
      <height>24</height>
     </rect>
@@ -84,8 +84,8 @@
   <widget class="QLineEdit" name="lineEditPrice">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>159</y>
+     <x>10</x>
+     <y>160</y>
      <width>121</width>
      <height>24</height>
     </rect>
@@ -98,7 +98,7 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>20</y>
+     <y>50</y>
      <width>231</width>
      <height>191</height>
     </rect>
@@ -116,36 +116,13 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>39</x>
-     <y>229</y>
+     <x>30</x>
+     <y>250</y>
      <width>331</width>
      <height>81</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="pushButtonCreate">
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-background-color: rgb(245, 245, 245);
-border:none;
-color: rgb(2, 2, 2);
-border-left: 1px solid rgb(245, 245, 245);
-border-right: 1px solid rgb(245, 245, 245);
-border-bottom: 5px solid rgb(245, 245, 245);
-}
-QPushButton:hover {
-    color: #000000;
-    background-color: rgb(200, 200, 200); 
-    border: 0px solid rgb(0, 0, 0);
-}</string>
-      </property>
-      <property name="text">
-       <string>Create</string>
-      </property>
-     </widget>
-    </item>
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="styleSheet">
@@ -169,7 +146,43 @@ QPushButton:hover {
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonCreate">
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+background-color: rgb(245, 245, 245);
+border:none;
+color: rgb(2, 2, 2);
+border-left: 1px solid rgb(245, 245, 245);
+border-right: 1px solid rgb(245, 245, 245);
+border-bottom: 5px solid rgb(245, 245, 245);
+}
+QPushButton:hover {
+    color: #000000;
+    background-color: rgb(200, 200, 200); 
+    border: 0px solid rgb(0, 0, 0);
+}</string>
+      </property>
+      <property name="text">
+       <string>Create</string>
+      </property>
+     </widget>
+    </item>
    </layout>
+  </widget>
+  <widget class="QLineEdit" name="lineEditDate">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>10</y>
+     <width>113</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Date</string>
+   </property>
   </widget>
  </widget>
  <tabstops>
@@ -179,7 +192,6 @@ QPushButton:hover {
   <tabstop>lineEditColor</tabstop>
   <tabstop>lineEditPrice</tabstop>
   <tabstop>lineEditRegDate</tabstop>
-  <tabstop>pushButtonCreate</tabstop>
  </tabstops>
  <resources/>
  <connections/>

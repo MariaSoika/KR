@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "car.h"
+#include "news.h"
 #include "dbmanager.h"
 
 namespace Ui {
@@ -23,11 +24,13 @@ private
     void on_pushButton_clicked();
 
 signals:
-            void createCars(Car * );
+    void createCars(Car * );
+    void createNews(News * );
 
 private:
     Ui::AddCarWindow* ui;
     Car* car;
+    News* news;
     DBManager* dbManager;
     QString logo;
 };

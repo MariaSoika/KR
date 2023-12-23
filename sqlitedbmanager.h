@@ -24,6 +24,8 @@ public:
 
     void displayAllCars(QLabel* labelinfo, QLabel* lableImage) override;
 
+    bool  insetrIntoTableNews(const News& news);
+
 private:
     bool openDataBase();
     bool createTables();

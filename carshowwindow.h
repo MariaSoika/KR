@@ -20,9 +20,8 @@ public:
 
     ~CarShowWindow();
 
-public
-    slots:
-            void on_createCars();
+public slots:
+    void on_createCars();
 private:
     Ui::CarShowWindow* ui;
     QSqlTableModel* model;

@@ -27,6 +27,8 @@ SOURCES += \
     findcarwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    news.cpp \
+    newsshowwindow.cpp \
     searchwindow.cpp \
     sqlitedbmanager.cpp \
     usermenuwindow.cpp
@@ -49,6 +51,8 @@ HEADERS += \
     dialogtest.h \
     findcarwindow.h \
     mainwindow.h \
+    news.h \
+    newsshowwindow.h \
     searchwindow.h \
     sqlitedbmanager.h \
     usermenuwindow.h
@@ -68,6 +72,7 @@ FORMS += \
     dialogtest.ui \
     findcarwindow.ui \
     mainwindow.ui \
+    newsshowwindow.ui \
     searchwindow.ui \
     usermenuwindow.ui
 
