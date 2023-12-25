@@ -6,6 +6,7 @@
 #include "allcarwindow.h"
 #include "newsshowwindow.h"
 #include "addcarwindow.h"
+#include "dbmanager.h"
 
 namespace Ui {
     class UserMenuWindow;
@@ -32,6 +33,7 @@ private:
     AllCarWindow* allCarWindow;
     NewsShowWindow* newsShowWindow;
     AddCarWindow* addCarWindow;
+    DBManager* dbManager;
 };
 
 #endif // USERMENUWINDOW_H

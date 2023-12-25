@@ -17,6 +17,8 @@ SOURCES += \
     adminreportswindow.cpp \
     allcarwindow.cpp \
     authorizationwindow.cpp \
+    bucket.cpp \
+    bucketfirstmenu.cpp \
     car.cpp \
     carinfoform.cpp \
     carshowwindow.cpp \
@@ -34,6 +36,7 @@ SOURCES += \
     usermenuwindow.cpp
 
 HEADERS += \
+    Customer.h \
     Report.h \
     addcarwindow.h \
     adminauthorizationwindow.h \
@@ -41,6 +44,8 @@ HEADERS += \
     adminreportswindow.h \
     allcarwindow.h \
     authorizationwindow.h \
+    bucket.h \
+    bucketfirstmenu.h \
     car.h \
     carinfoform.h \
     carshowwindow.h \
@@ -64,6 +69,7 @@ FORMS += \
     adminreportswindow.ui \
     allcarwindow.ui \
     authorizationwindow.ui \
+    bucketfirstmenu.ui \
     carinfoform.ui \
     carshowwindow.ui \
     contactswindow.ui \

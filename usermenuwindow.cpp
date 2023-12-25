@@ -11,7 +11,7 @@ UserMenuWindow::UserMenuWindow(QWidget* parent) :
     allCarWindow=new AllCarWindow(this);
     allCarWindow->setModal(true);
 
-    newsShowWindow = new NewsShowWindow(this);
+    newsShowWindow = new NewsShowWindow(dbManager, this);
     newsShowWindow->setModal(true);
 
     connect(addCarWindow, &AddCarWindow::accepted, newsShowWindow, &newsShowWindow::on_createNews);

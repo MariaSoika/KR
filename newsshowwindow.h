@@ -22,6 +22,7 @@ public slots:
 private:
     Ui::NewsShowWindow *ui;
     QSqlTableModel* model;
+    DBManager* dbManager;
 };
 
 #endif // NEWSSHOWWINDOW_H

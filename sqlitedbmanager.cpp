@@ -80,6 +80,21 @@ bool SqliteDBManager::createTables() {
         qDebug() << query.lastError().text();
         return false;
     }
+    if (!query.exec("CREATE TABLE 'Cars' (\
+                     'id' INTEGER,\
+                     'brand' VARCHAR(255),\
+                     'model'	VARCHAR(255),\
+                     'year'	INTEGER,\
+                     'color'	VARCHAR(255),\
+                     'price'	INTEGER,\
+                     'registstration_date'	INTEGER,\
+                     'image' VARCHAR(255),\
+                     PRIMARY KEY('id' AUTOINCREMENT)\
+                     );")) {
+        qDebug("Database: error of creating table 'cars'");
+        qDebug() << query.lastError().text();
+        return false;
+    }
     if (!query.exec("CREATE TABLE News (\
                     news   VARCHAR (50),\
                     date   VARCHAR (50)\
@@ -88,12 +103,12 @@ bool SqliteDBManager::createTables() {
         qDebug() << query.lastError().text();
         return false;
     }
-    if (!query.exec("CREATE TABLE Users (\
-                    id       INTEGER       PRIMARY KEY AUTOINCREMENT,\
-                    login    VARCHAR (50)  UNIQUE,\
-                    password VARCHAR (100),\
-                    role     VARCHAR (10) \
-                    );")) {
+    if (!query.exec("CREATE TABLE Users ("
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    "login VARCHAR(50) UNIQUE, "
+                    "password VARCHAR(100), "
+                    "role VARCHAR(10)"
+                    ");")) {
         qDebug("Database: error of creating table 'users'");
         qDebug() << query.lastError().text();
         return false;
