@@ -1,5 +1,10 @@
 #include "car.h"
 
+int Car::getId()
+{
+    return id;
+}
+
 QString Car::getBrand() const {
     return brand;
 }
@@ -74,5 +79,10 @@ Car::Car(QString brand, QString model, int year, QString color, int price, int r
     this->price = price;
     this->registrationDate = registrationDate;
     this->image = image;
+
+}
+
+Car::~Car()
+{
 
 }

@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "adminauthorizationwindow.h"
-
 namespace Ui {
-    class AuthorizationWindow;
+class AuthorizationWindow;
 }
 
 class AuthorizationWindow : public QDialog {
@@ -16,11 +15,11 @@ public:
 
     ~AuthorizationWindow();
 
-    signals:
-            void closeMainWindow();
-private
-    slots:
-            void on_pushButtonAdmLogIn_clicked();
+signals:
+    void GoBack();
+
+private slots:
+    void on_pushButtonAdmLogIn_clicked();
 
     void on_pushButtonUserLogIn_clicked();
 

@@ -32,6 +32,7 @@ SOURCES += \
     news.cpp \
     newsshowwindow.cpp \
     searchwindow.cpp \
+    shopwindow.cpp \
     sqlitedbmanager.cpp \
     usermenuwindow.cpp
 
@@ -59,6 +60,7 @@ HEADERS += \
     news.h \
     newsshowwindow.h \
     searchwindow.h \
+    shopwindow.h \
     sqlitedbmanager.h \
     usermenuwindow.h
 
@@ -80,6 +82,7 @@ FORMS += \
     mainwindow.ui \
     newsshowwindow.ui \
     searchwindow.ui \
+    shopwindow.ui \
     usermenuwindow.ui
 
 # Default rules for deployment.

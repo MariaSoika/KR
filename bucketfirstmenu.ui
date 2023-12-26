@@ -1,17 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>BucketFirstMenu</class>
- <widget name="BucketFirstMenu" class="QDialog">
+ <widget class="QDialog" name="BucketFirstMenu">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>230</width>
+    <height>90</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLineEdit" name="lineEditDate">
+     <property name="placeholderText">
+      <string>Enter date when you do shopping</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+background-color: rgb(245, 245, 245);
+border:none;
+color: rgb(2, 2, 2);
+border-left: 1px solid rgb(245, 245, 245);
+border-right: 1px solid rgb(245, 245, 245);
+border-bottom: 5px solid rgb(245, 245, 245);
+}
+QPushButton:hover {
+    color: #000000;
+    background-color: rgb(200, 200, 200); 
+    border: 0px solid rgb(0, 0, 0);
+}</string>
+     </property>
+     <property name="text">
+      <string>Go to bucket</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

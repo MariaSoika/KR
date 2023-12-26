@@ -1,11 +1,13 @@
 #include "mainwindow.h"
 #include "sqlitedbmanager.h"
+#include "dbmanager.h"
 
 #include <QApplication>
 
 int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
     DBManager* dbManager = new SqliteDBManager();
+    //SqliteDBManager* dbManager = new SqliteDBManager();
     dbManager->connectToDataBase();
 
     MainWindow w(dbManager);

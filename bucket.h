@@ -1,17 +1,15 @@
 #ifndef BUCKET_H
 #define BUCKET_H
 #include <QString>
+#include "car.h"
 
 class Bucket
 {
-protected:
-    QString brand;
-    QString model;
-    int price;
-    int registrationDate;
-    QString image;
+    QVector<Car*> cars;
 public:
     Bucket();
+    ~Bucket();
+    void addCar(Car car);
 };
 
 #endif // BUCKET_H

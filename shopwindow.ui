@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AllCarWindow</class>
- <widget class="QDialog" name="AllCarWindow">
+ <class>ShopWindow</class>
+ <widget class="QDialog" name="ShopWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>659</width>
+    <width>640</width>
     <height>500</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>639</width>
+        <width>620</width>
         <height>480</height>
        </rect>
       </property>

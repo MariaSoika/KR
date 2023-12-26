@@ -17,7 +17,6 @@ AuthorizationWindow::~AuthorizationWindow() {
 
 void AuthorizationWindow::on_pushButtonAdmLogIn_clicked() {
     adminAuthorizationWindow->show();
-    this->hide();
 }
 
 

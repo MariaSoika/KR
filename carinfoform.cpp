@@ -3,36 +3,26 @@
 #include "QMessageBox"
 #include "QSqlQuery"
 
-CarInfoForm::CarInfoForm(QWidget* parent) :
-        QWidget(parent),
+CarInfoForm::CarInfoForm(Car& car, QWidget* parent) :
+    QWidget(parent), carId(car.getId()),
         ui(new Ui::CarInfoForm) {
     ui->setupUi(this);
-    QSqlQuery query;
-    query.prepare("SELECT * FROM Cars WHERE model = :carModel");
-    query.bindValue(":carModel", "Model Y");
-
-    if (query.exec())
-    {
-        if (query.next())
-        {
-            QString foundCarBrand = query.value("brand").toString();
-            QString foundCarModel = query.value("model").toString();
-            int foundCarYear = query.value("year").toInt();
-            QString foundCarColor = query.value("color").toString();
-            int foundCarPrice = query.value("price").toDouble();
-            int foundCarRegistrationDate = query.value("registration_date").toInt();
-
-            ui->labelInfo->setText("---Car info---\n"
-                                   "Brand: " + foundCarBrand +
-                                   "\nModel: " + foundCarModel +
-                                   "\nYear: " + QString::number(foundCarYear) +
-                                   "\nColor: " + foundCarColor +
-                                   "\nPrice: " + QString::number(foundCarPrice) +
-                                   "\nRegistration date: " + QString::number(foundCarRegistrationDate));
-        }
+    ui->label->setPixmap(QPixmap(car.getImage()));
+    ui->labelInfo->setText("---Car info---\n"
+                           "Brand: " + car.getBrand() +
+                           "\nModel: " + car.getModel() +
+                           "\nYear: " + QString::number(car.getYear()) +
+                           "\nColor: " + car.getColor() +
+                           "\nPrice: " + QString::number(car.getPrice()) +
+                           "\nRegistration date: " + QString::number(car.getRegistrationDate()));
     }
-}
 
 CarInfoForm::~CarInfoForm() {
     delete ui;
 }
+
+void CarInfoForm::on_pbAddToBucket_clicked()
+{
+    emit this->selectedCarId(carId);
+}
+

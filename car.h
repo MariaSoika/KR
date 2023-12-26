@@ -8,6 +8,7 @@ using namespace std;
 
 class Car {
 protected:
+    int id;
     QString brand;
     QString model;
     int year;
@@ -17,6 +18,7 @@ protected:
     QString image;
 public:
 
+    int getId();
     QString getBrand() const;
 
     void setBrand(QString brand);

@@ -78,24 +78,20 @@ bool SqliteDBManager::createTables() {
                      );")) {
         qDebug("Database: error of creating table 'cars'");
         qDebug() << query.lastError().text();
+        qDebug() << query.lastQuery();
         return false;
     }
-    if (!query.exec("CREATE TABLE 'Cars' (\
-                     'id' INTEGER,\
+    if (!query.exec("CREATE TABLE 'Bucket' (\
                      'brand' VARCHAR(255),\
                      'model'	VARCHAR(255),\
-                     'year'	INTEGER,\
-                     'color'	VARCHAR(255),\
                      'price'	INTEGER,\
-                     'registstration_date'	INTEGER,\
-                     'image' VARCHAR(255),\
-                     PRIMARY KEY('id' AUTOINCREMENT)\
+                     'image' VARCHAR(255)\
                      );")) {
-        qDebug("Database: error of creating table 'cars'");
+        qDebug("Database: error of creating table 'Bucket'");
         qDebug() << query.lastError().text();
         return false;
     }
-    if (!query.exec("CREATE TABLE News (\
+    if (!query.exec("CREATE TABLE 'News' (\
                     news   VARCHAR (50),\
                     date   VARCHAR (50)\
                     );")) {
@@ -103,25 +99,27 @@ bool SqliteDBManager::createTables() {
         qDebug() << query.lastError().text();
         return false;
     }
-    if (!query.exec("CREATE TABLE Users ("
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    "login VARCHAR(50) UNIQUE, "
-                    "password VARCHAR(100), "
-                    "role VARCHAR(10)"
-                    ");")) {
+    if (!query.exec("CREATE TABLE 'Users' (\
+                    id INTEGER PRIMARY KEY AUTOINCREMENT, \
+                    login VARCHAR(50) UNIQUE, \
+                    password VARCHAR(100), \
+                    role VARCHAR(10)\
+                    );")) {
         qDebug("Database: error of creating table 'users'");
         qDebug() << query.lastError().text();
+        qDebug() << query.lastQuery();
         return false;
     }
-    if (!query.exec("CREATE TABLE Sales (\
+    if (!query.exec("CREATE TABLE 'Sales' (\
                     id       INTEGER       PRIMARY KEY AUTOINCREMENT,\
                     firstName    VARCHAR (50),\
                     lastName VARCHAR (100),\
                     carModel     VARCHAR (50), \
-                    price INTEGER ,\
+                    price INTEGER \
                     );")) {
         qDebug("Database: error of creating table 'users'");
         qDebug() << query.lastError().text();
+        qDebug() << query.lastQuery();
         return false;
     }
     return true;
@@ -150,30 +148,36 @@ bool SqliteDBManager::insertIntoTable(const Car& car) {
     }
 }
 
-void SqliteDBManager::displayAllCars(QLabel* labelCarInfo, QLabel* labelCarImage)
+QVector<Car>* SqliteDBManager::getAllCars()
 {
+    QVector<Car>* cars = new QVector<Car>();
     QSqlQuery query(db);
     if (query.exec("SELECT * FROM Cars"))
     {
-        QString CarImage = query.value("image").toString();
-        QString CarBrand = query.value("brand").toString();
-        QString CarModel = query.value("model").toString();
-        int CarYear = query.value("year").toInt();
-        QString CarColor = query.value("color").toString();
-        int CarPrice = query.value("price").toInt();
-        int CarRegistrarionDate = query.value("registstration_Date").toInt();
+        while(query.next()){
+            QString carImage = query.value("image").toString();
+            QString carBrand = query.value("brand").toString();
+            QString carModel = query.value("model").toString();
+            int carYear = query.value("year").toInt();
+            QString carColor = query.value("color").toString();
+            int carPrice = query.value("price").toInt();
+            int carRegistrarionDate = query.value("registstration_Date").toInt();
+            Car car(carBrand, carModel, carYear, carColor, carPrice, carRegistrarionDate, carImage);
+            cars->push_back(car);
 
-        QPixmap carImage(CarImage);
-        labelCarImage->setPixmap(carImage.scaled(labelCarImage->size(), Qt::KeepAspectRatio));
+//            QPixmap carImage(carImage);
+//            labelCarImage->setPixmap(carImage.scaled(labelCarImage->size(), Qt::KeepAspectRatio));
 
-        labelCarInfo->setText("---Car info---"
-                              "\nBrand: " + CarBrand +
-                              "\nModel: " + CarModel +
-                              "\nYear: " + QString::number(CarYear) +
-                              "\nColor: " + CarColor +
-                              "\nPrice: " + QString::number(CarPrice) +
-                              "\nRegistration date: " + QString::number(CarRegistrarionDate));
+//            labelCarInfo->setText("---Car info---"
+//                                  "\nBrand: " + carBrand +
+//                                  "\nModel: " + carModel +
+//                                  "\nYear: " + QString::number(carYear) +
+//                                  "\nColor: " + carColor +
+//                                  "\nPrice: " + QString::number(carPrice) +
+//                                  "\nRegistration date: " + QString::number(carRegistrarionDate));
+        }
     }
+    return cars;
 }
 
 bool SqliteDBManager::insetrIntoTableNews(const News &news)

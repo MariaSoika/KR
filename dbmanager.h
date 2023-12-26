@@ -5,6 +5,7 @@
 #include <QLabel>
 #include "car.h"
 #include "news.h"
+#include "bucket.h"
 
 class DBManager {
 
@@ -17,9 +18,11 @@ public:
 
     virtual bool insertIntoTable(const Car& car) = 0;
 
-    virtual void displayAllCars(QLabel* labelinfo, QLabel* lableImage) = 0;
+    virtual QVector<Car>* getAllCars() = 0;
 
     virtual bool insetrIntoTableNews(const News& news) = 0;
+
+    //virtual bool insetrIntoTableBucket() = 0;
 };
 
 #endif // DBMANAGER_H

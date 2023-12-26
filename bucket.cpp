@@ -2,10 +2,8 @@
 
 Bucket::Bucket()
 {
-
 }
 
 Bucket::~Bucket()
 {
-
 }

@@ -19,7 +19,7 @@ AdminMainWindow::AdminMainWindow(DBManager* dbManager, QWidget* parent) :
     connect(addCarWindow, &AddCarWindow::accepted, carShowWindow, &CarShowWindow::on_createCars);
     connect(addCarWindow, &AddCarWindow::createCars, carShowWindow, &CarShowWindow::on_createCars);
 
-    deleteCarWindow = new DeleteCarWindow(this);
+    deleteCarWindow = new DeleteCarWindow(this->dbManager,this);
     deleteCarWindow->setModal(true);
     connect(deleteCarWindow, &DeleteCarWindow::accepted, carShowWindow, &CarShowWindow::on_createCars);
 

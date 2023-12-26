@@ -3,11 +3,16 @@
 #include "sqlitedbmanager.h"
 #include <QMessageBox>
 
-DeleteCarWindow::DeleteCarWindow(QWidget *parent) :
+DeleteCarWindow::DeleteCarWindow(DBManager *dbManager,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DeleteCarWindow)
 {
     ui->setupUi(this);
+    model = new QSqlTableModel(this, dbManager->getDB());
+    model->setTable("Cars");
+    model->select();
+    ui->tableView->setModel(model);
+    ui->tableView->horizontalHeader()->setStretchLastSection(true);
 }
 
 DeleteCarWindow::~DeleteCarWindow()
@@ -17,7 +22,7 @@ DeleteCarWindow::~DeleteCarWindow()
 
 
 void DeleteCarWindow::on_pushButton_clicked()
-{
+{/*
     QString carModelToDelete = ui->lineEditCarNameToDelete->text();
 
     if(carModelToDelete.isEmpty())
@@ -36,6 +41,14 @@ void DeleteCarWindow::on_pushButton_clicked()
     }
     else
         QMessageBox::warning(this, QString("Warning"), QString("Error of deleting data from table Cars"));
+*/
+    model->removeRow(row);
 }
 
+
+
+void DeleteCarWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    row = index.row();
+}
 

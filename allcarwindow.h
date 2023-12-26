@@ -13,11 +13,11 @@ class AllCarWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit AllCarWindow(QWidget *parent = nullptr);
+    explicit AllCarWindow(DBManager *dbManager, QWidget *parent = nullptr);
     ~AllCarWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_selectedCarId(int carId);
 
 private:
     Ui::AllCarWindow *ui;

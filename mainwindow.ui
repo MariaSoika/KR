@@ -46,7 +46,7 @@ background-color: rgb(240, 240, 240);
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-707</y>
+         <y>0</y>
          <width>636</width>
          <height>1218</height>
         </rect>
@@ -100,10 +100,10 @@ border:none;
           <widget class="QLabel" name="label_2">
            <property name="geometry">
             <rect>
-             <x>10</x>
-             <y>70</y>
+             <x>0</x>
+             <y>50</y>
              <width>591</width>
-             <height>291</height>
+             <height>371</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -116,7 +116,7 @@ border:none;
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resources.qrc">:/pictures/pictures/Снимок экрана 2023-12-06 195412.png</pixmap>
+            <pixmap resource="resources.qrc">:/pictures/pictures/teslay2-1200x800.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>

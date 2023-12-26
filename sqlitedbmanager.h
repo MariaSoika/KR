@@ -22,7 +22,7 @@ public:
 
     bool insertIntoTable(const Car& car) override;
 
-    void displayAllCars(QLabel* labelinfo, QLabel* lableImage) override;
+    QVector<Car>* getAllCars() override;
 
     bool  insetrIntoTableNews(const News& news);
 

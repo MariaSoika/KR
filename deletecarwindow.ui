@@ -6,21 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>219</width>
-    <height>94</height>
+    <width>329</width>
+    <height>254</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLineEdit" name="lineEditCarNameToDelete">
-     <property name="placeholderText">
-      <string>Name car wich you wont to delete</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <widget class="QPushButton" name="pushButton">
      <property name="styleSheet">
@@ -43,6 +36,9 @@ QPushButton:hover {
       <string>Delete</string>
      </property>
     </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QTableView" name="tableView"/>
    </item>
   </layout>
  </widget>

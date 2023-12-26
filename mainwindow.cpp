@@ -6,9 +6,13 @@
 #include <QDebug>
 
 MainWindow::MainWindow(DBManager* dbManager, QWidget* parent)
-        : QMainWindow(parent), ui(new Ui::MainWindow),
-          dbManager(dbManager) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), dbManager(dbManager), authorizationWindow(nullptr)
+        {
     ui->setupUi(this);
+
+    bucketFirstMenu=new BucketFirstMenu(this);
+    bucketFirstMenu->setModal(true);
+
     authorizationWindow = new AuthorizationWindow(this->dbManager, this);
     authorizationWindow->setModal(true);
 
@@ -28,7 +32,7 @@ MainWindow::MainWindow(DBManager* dbManager, QWidget* parent)
 
     //carInfoY=new CarInfoForm(this);
 
-    userMenuWindow = new UserMenuWindow(this);
+    userMenuWindow = new UserMenuWindow(this->dbManager, this);
     userMenuWindow->setModal(true);
 }
 
@@ -36,6 +40,11 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
+void MainWindow::on_GoBack()
+{
+    authorizationWindow->hide();
+    this->show();
+}
 
 void MainWindow::on_pushButtonLogIn_clicked() {
     authorizationWindow->show();
@@ -57,5 +66,11 @@ void MainWindow::on_pushButtonSearch_clicked()
 {
     //searchWindow->show();
     findCarWindow->show();
+}
+
+
+void MainWindow::on_pushButtonBucket_clicked()
+{
+    bucketFirstMenu->show();
 }
 

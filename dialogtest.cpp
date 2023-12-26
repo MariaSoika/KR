@@ -6,8 +6,8 @@ DialogTest::DialogTest(QWidget* parent) :
         QDialog(parent),
         ui(new Ui::DialogTest) {
     ui->setupUi(this);
-    CarInfoForm* carInfo = new CarInfoForm();
-    ui->verticalLayout_2->addWidget(carInfo);
+//    CarInfoForm* carInfo = new CarInfoForm();
+//    ui->verticalLayout_2->addWidget(carInfo);
 
     //CarInfoForm* carInfo2 = new CarInfoForm();
     //ui->verticalLayout_2->addWidget(carInfo2);
